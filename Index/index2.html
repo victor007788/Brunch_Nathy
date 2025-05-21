@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brunch da Nath</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Meta tags para redes sociais -->
+  <meta property="og:title" content="Brunch da Nath" />
+  <meta property="og:description" content="Confirme presença no brunch especial da Nathy! 💖" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1715867839423-df2b3fdf3f8d?auto=format&fit=crop&w=1350&q=80" />
+  <meta property="og:type" content="website" />
+  <style>
+    /* Tela de boas-vindas fade-out */
+    #welcome-screen.fade-out {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    /* Estilo e animação de digitação */
+    .typing-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #be123c; /* tailwind rose-700 */
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #be123c;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+  </head>
+<body>
+
+  <!-- Tela de boas-vindas -->
+  <div id="welcome-screen" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <h1 class="typing-text text-center"></h1>
+  </div>
+  <style>
+    /* Estilo e animação de digitação com quebra de linha */
+    .typing-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #be123c; /* rose-700 */
+      white-space: normal;       /* permite quebra de linha */
+      overflow: hidden;
+      display: inline-block;
+      border-right: 2px solid #be123c;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+      max-width: 90vw;           /* limita largura em telas pequenas */
+      text-align: center;
+    }
+  
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+  
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  
+    #welcome-screen h1 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+  
+  <nav class="menu-flutuante">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="#local" onclick="closeMenu()">Local do Evento</a>
+      <a href="#o-que-é" onclick="closeMenu()">O que é o Brunch</a>
+      <a href="#funcionamento" onclick="closeMenu()">Como funciona?</a>
+      <a href="#regras" onclick="closeMenu()">Regras</a>
+      <a href="#presentes" onclick="closeMenu()">Presentes</a>
+      <a href="#cardapio" onclick="closeMenu()">Cardápio</a>
+      <a href="#confirmar" onclick="closeMenu()">Confirmar Presença</a>
+      <a href="#salvar" onclick="closeMenu()">Salvar na agenda</a>
+    </div>
+  </nav>
+
+  <header>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <h2 style="margin-bottom: -10px; color: rgb(233, 30, 99);">Bem-vindos ao</h2>
+    <p style=" margin-top: 0; font-size: 30px; font-family: 'cinzel decorative', cursive; color: rgb(233, 30, 99);">
+      Brunch da Nathy
+    </p>
+      <div class="container mx-auto px-4 text-center relative z-10">
+    <svg class="w-20 h-20 mx-auto mb-auto text-rose-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="currentColor">
+      <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+  </svg>
+  <p style="margin-top: 10; font-size: 15px; font-family: 'montserrat', cursive; color: black;">
+    Você é meu convidado especial para comemorar um dia cheio de carinho, risadas e boa comida! 💕</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+  <div class="flex flex-col md:flex-row justify-center items-center gap-2 mb-15">
+    <div class="bg-rose-light rounded-lg p-4 flex items-center">
+        <span class="text-3xl mr-3">📅</span>
+        <div class="text-left">
+            <p class="font-medium">Data e Horário:</p>
+            <p style="margin-top: 0; color: rgb(0, 0, 0);">19 de Junho de 2025 às 15h   </p>
+        </div>
+    </div>
+    
+    <div class="bg-rose-light rounded-lg p-2 flex items-center">
+        <span class="text-3xl mr-4">📍</span>
+        <div class="text-left">
+            <p class="font-medium">Local:</p>
+            <p style="margin-top: 0; color: rgb(0, 0, 0);">Parque Francisco Rizzo,ㅤㅤ 
+              <p style="margin-top: 0; color: rgb(0, 0, 0);"> Embu das artes</p>
+        </div>
+    </div>
+</div>
+</header>
+<!-- Contador regressivo -->
+<p>ㅤ</p>
+<div class="mb-8">
+  <p class="text-center mb-4 text-lg ">Contagem regressiva:</p>
+
+  <div id="countdown" class="countdown-container">
+    <div class="countdown-item">
+      <span class="countdown-number" id="days">30</span>
+      <span class="countdown-label">dias</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="hours">06</span>
+      <span class="countdown-label">horas</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="minutes">05</span>
+      <span class="countdown-label">min</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="seconds">05</span>
+      <span class="countdown-label">seg</span>
+    </div>
+  </div>
+</div>
+       <p></p>
+                <a href="#confirmar" class="confirmacao-btn">
+                    Confirmar presença
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+  <section id="local">
+    <h2>Local do Evento</h2>
+    <p>Nos encontramos no <strong>Parque Francisco Rizzo</strong> para um momento especial.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2560117674235!2d-46.849097!3d-23.5922399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfaa44dc458715%3A0x5f5974c5a5764cf2!2sParque%20Francisco%20Rizzo!5e0!3m2!1spt-BR!2sbr!4v1621013078190!5m2!1spt-BR!2sbr" loading="lazy"></iframe>
+    <a href="https://maps.app.goo.gl/to3bo5rFjgzfTqsZ6" target="_blank" class="cliqueaqui-btn">Clique aqui</a>
+  </section>
+
+  <section id="o-que-é">
+    <h2>O que é o Brunch</h2>
+    <p>
+      <h5 class="fade-in"> 
+        Um <strong>brunch de aniversário</strong> é uma celebração <strong>leve</strong> e <strong>descontraída</strong>, realizada entre o <strong>almoço</strong> e o <strong>café da tarde</strong>, geralmente <strong>ao ar livre</strong>. Com <strong>comidinhas saudáveis</strong>, <strong>boas conversas</strong> e <strong>brincadeiras inclusivas</strong>, é pensado para reunir apenas <strong>amigos</strong> e <strong>familiares mais íntimos</strong> em um momento <strong>especial</strong> e <strong>acolhedor</strong>.
+      </h5>    </p>
+      </section>
+
+  <section id="funcionamento">
+    <h2>Como funciona?</h2>
+    <p><strong> Um brunch de aniversário ao ar livre, entre o almoço e o café da tarde, com comidinhas leves e saudáveis. Um momento descontraído com amigos e familiares íntimos, recheado de boas conversas, brincadeiras e dinâmicas para incluir e integrar todos.</strong></p>
+  </section>
+
+  <section id="regras">
+    <h2>Regras</h2>
+    <p><strong>1.  Roupa Rosa é Essencial!</strong>
+      Venha com a sua melhor roupa rosa, seja camisa, vestido ou o que te fizer sentir mais confortável. O importante é que seja rosa, para darmos aquele toque de união e charme!</p>
+   
+    <p> <strong>2.  Convidados Não Convidam!</strong>
+      Por uma questão de organização, não é permitido convidar acompanhantes. A lista de convidados está fechada, e queremos garantir que todos se sintam à vontade e aproveitem a ocasião!</p>
+   
+  <p> <strong>3.  Sem Bebidas Alcoólicas ou Refrigerantes</strong>
+      O nosso brunch será livre de bebidas alcoólicas e refrigerantes. Queremos focar em um ambiente saudável e leve. Porém, caso queira algo fora do cardápio, há quiosques no parque que vendem bebidas alcoólicas e refrigerantes, caso deseje algo extra.  </p>
+    </section>
+
+  <section id="presentes">
+    <h2>Ideias de Presente</h2>
+    <div class="presentes">
+      <div class="presente">
+        <img src='../imagens/estilo.jpg' no-repeat center>
+        <p>Roupa</p>
+      </div>
+      <div class="presente">
+        <img src='../imagens/doces.jpg' no-repeat center>
+        <p>Doces</p>
+      </div>
+      <div class="presente">
+        <img src='../imagens/singular.jpg' no-repeat center>
+        <p>Item personalizado</p>
+      </div>
+      <div class="presente">
+        <img src='../imagens/joias.jpg' no-repeat center>
+        <p>Joias</p>
+      </div>
+      <div class="presente">
+        <img src='../imagens/livros.jpg' no-repeat center>
+        <p>Livros</p>
+      </div>
+      <div class="presente">
+        <img src='../imagens/perfumes.jpg' no-repeat center>        
+        <p>Perfume</p>
+        <a href="https://wa.me/5511999999999" target="_blank" class="revendedora-btn">Fale com uma revendedora</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cardapio">
+    <h2>Cardápio</h2>
+    <p>Nos encontramos no <strong>Parque Francisco Rizzo</strong> para um momento especial.</p>
+  </section>
+
+  <section id="confirmar" style="text-align:center">
+    <h2>Confirme sua presença</h2>
+    <p>Você pode confirmar sua presença clicando na caixinha abaixo:</p>
+    <a class="botao" href="https://wa.me/5511999999999?text=Oi%20Nathy!%20Confirmei%20presen%C3%A7a%20no%20seu%20brunch.%20J%C3%A1%20salvei%20na%20agenda!%20%F0%9F%92%96" target="_blank">
+        Confirmar Presença
+    </a>
+</section>
+    <section id="salvar" style="text-align:center">
+        <h2>Salve na agenda</h2>
+    <p style="margin-top: 30px;">Salve essa data especial clicando no botão abaixo:</p>
+    <a class="botao" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Brunch+da+Nath&dates=20250619T140000/20250619T160000&details=Brunch+no+Parque+Francisco+Rizzo&location=Parque+Francisco+Rizzo,+Embu+das+Artes&sf=true" target="_blank">
+      Salvar na Agenda
+    </a>
+  </section>
+
+  <footer>
+    Com carinho, Nathy 💖
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("active");
+    }
+
+    function closeMenu() {
+      document.getElementById("menuLinks").classList.remove("active");
+    }
+  </script>
+
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,             // Duração da animação (ms)
+    easing: 'ease-in-out',     // Tipo de transição
+    once: false,               // Repete ao rolar
+    mirror: true               // Anima ao rolar para cima também
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      function updateCountdown() {
+          // Data e hora do evento: 19 de junho de 2025 às 15:00:00 (formato ISO)
+          const eventDate = new Date('2025-06-19T15:00:00').getTime();
+          const now = new Date().getTime();
+          const timeLeft = eventDate - now;
+
+          if (timeLeft < 0) {
+              document.getElementById('days').innerText = '00';
+              document.getElementById('hours').innerText = '00';
+              document.getElementById('minutes').innerText = '00';
+              document.getElementById('seconds').innerText = '00';
+              return;
+          }
+
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById('days').innerText = days.toString().padStart(2, '0');
+          document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+          document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+          document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+  });
+</script>
+
+  <!-- Script para animação de texto e ocultar tela -->
+  <script>
+    const mensagem = "Bem-vindos ao\nBrunch da Nathy!";
+    const typingEl = document.querySelector(".typing-text");
+
+    window.addEventListener("load", () => {
+      typingEl.textContent = mensagem;
+
+      setTimeout(() => {
+        document.getElementById("welcome-screen").classList.add("fade-out");
+        setTimeout(() => {
+          document.getElementById("welcome-screen").style.display = "none";
+        }, 1000); // tempo da transição
+      }, 4000); // tempo antes de sumir
+    });
+  </script>
+
+</body>
+</html>

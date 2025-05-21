@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brunch da Nath</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Meta tags para redes sociais -->
+  <meta property="og:title" content="Brunch da Nath" />
+  <meta property="og:description" content="Confirme presença no brunch especial da Nathy! 💖" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1715867839423-df2b3fdf3f8d?auto=format&fit=crop&w=1350&q=80" />
+  <meta property="og:type" content="website" />
+  </head>
+<body>
+
+  <div id="welcome-screen">
+    <p class="typing-text"></p>
+</div>
+
+  
+  <nav class="menu-flutuante">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="#local" onclick="closeMenu()">Local do Evento</a>
+      <a href="#o-que-e" onclick="closeMenu()">O que é o Brunch</a>
+      <a href="#como-funciona" onclick="closeMenu()">Como funciona?</a>
+      <a href="#regras" onclick="closeMenu()">Regras</a>
+      <a href="#presentes" onclick="closeMenu()">Presentes</a>
+      <a href="#cardapio" onclick="closeMenu()">Cardápio</a>
+      <a href="#confirmar" onclick="closeMenu()">Confirmar Presença</a>
+      <a href="#salvar" onclick="closeMenu()">Salvar na agenda</a>
+    </div>
+  </nav>
+
+  <header>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <h2 style="margin-bottom: -10px; color: #df30af;">Bem-vindos ao</h2>
+    <p style=" margin-top: 0; font-size: 30px; font-family: 'cinzel decorative', cursive; color: #df30af;">
+      Brunch da Nathy
+    </p>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+  <p style="margin-top: 10px; font-size: 23px; font-family: 'Satisfy', cursive; color: black;">
+    É meu aniversário!<br>
+E nada melhor do que comemorar com<br> quem eu gosto!<br>
+Você está super convidado para um<br> brunch cheio de risadas, memórias<br> especiais e comidinhas deliciosas.<br>
+ Vai ser incrível — só falta você! 💕</p></div>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <h2 style="margin: 0;font-size: 38px; font-family: 'Noto Serif Georgian', cursive; color: #df30af;">22.06</h2>
+      <p style="margin: 0;font-size: 23px; font-family: 'Noto Serif Georgian', cursive; color: #df30af;">às</p>
+      <h2 style="margin: 0;font-size: 38px; font-family: 'Noto Serif Georgian', cursive; color: #df30af;">12 H</h2>
+    </div>
+    <p>ㅤ</p>
+    <p>ㅤ</p>
+    <div class="bg-rose-light rounded-full p-5 flex items-center">
+        <span class="text-3xl mr-4">📍</span>
+        <div class="text-left">
+            <p class="font-medium">Local:</p>
+            <p style="margin-top: 0; color: rgb(0, 0, 0);">Parque Francisco Rizzo, <br>Embu das artes
+        </div>
+    </div>
+</div>
+</header>
+<!-- Contador regressivo -->
+<p>ㅤ</p>
+<div class="mb-8">
+  <p class="text-center mb-4 text-lg ">Contagem regressiva:</p>
+
+  <div id="countdown" class="countdown-container">
+    <div class="countdown-item">
+      <span class="countdown-number" id="days">30</span>
+      <span class="countdown-label">dias</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="hours">06</span>
+      <span class="countdown-label">horas</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="minutes">05</span>
+      <span class="countdown-label">min</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-number" id="seconds">05</span>
+      <span class="countdown-label">seg</span>
+    </div>
+  </div>
+</div>
+       <p></p>
+                <a href="#confirmar" class="confirmacao-btn">
+                    Confirmar presença
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- local -->
+    <section id="local" class="section">
+      <div class="container">
+        <div class="content-box">
+          <h2 class="section-title">Local</h2>
+    
+          <div class="card">
+            <svg class="flower-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+              <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+            </svg>
+    
+            <div class="card-content">
+              <div class="flex-container">
+                <div class="text-box">
+                  <p class="description">Nosso brunch será neste lugar aconchegante, perfeito para uma manhã especial:</p>
+    
+                  <div class="location-box">
+                    <span class="location-icon">📍</span>
+                    <p>Parque Francisco Rizzo,
+                      Embu das artes</p>
+                  </div>
+    
+                  <a href="https://maps.app.goo.gl/to3bo5rFjgzfTqsZ6" target="_blank" class="map-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="map-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Ver no Google Maps
+                  </a>
+                </div>
+    
+                <div class="image-box">
+                  <div class="rounded-lg overflow-hidden shadow-md bg-rose-light h-64 flex items-center justify-center">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2560117674235!2d-46.849097!3d-23.5922399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfaa44dc458715%3A0x5f5974c5a5764cf2!2sParque%20Francisco%20Rizzo!5e0!3m2!1spt-BR!2sbr!4v1621013078190!5m2!1spt-BR!2sbr"
+                      loading="lazy"
+                      width="100%"
+                      height="100%"
+                      style="border:0;"
+                      allowfullscreen=""
+                      referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<!-- o que é Brunch -->    
+        <section id="o-que-e" class="section">
+            <div class="container">
+                <div class="content">
+                    <h2 class="titulo">O que é o Brunch?</h2>
+                    
+                    <div class="box-branco">
+                        <!-- Decoração floral -->
+                        <svg class="flower-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                        </svg>
+    
+                        <div class="descricao">
+                            <div class="texto">
+                              <p>O meu brunch de aniversário vai ser ar livre, entre o almoço e o café da tarde, com comidinhas leves e saudáveis.</p> 
+                              <p>Um momento descontraído com amigos e familiares íntimos, recheado de boas conversas, brincadeiras e dinâmicas para incluir e integrar todos.</p>                            </div>
+    
+                            <div class="cards">
+                                <div class="card bg-rose">
+                                    <span class="emoji">🥐</span>
+                                    <p>Café da manhã</p>
+                                </div>
+                                <div class="card bg-nude">
+                                    <span class="emoji">🥗</span>
+                                    <p>Almoço</p>
+                                </div>
+                                <div class="card bg-nude">
+                                    <span class="emoji">🥂</span>
+                                    <p>Celebração</p>
+                                </div>
+                                <div class="card bg-rose">
+                                    <span class="emoji">💕</span>
+                                    <p>Amizade</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- funcionamento -->
+        <section id="como-funciona" class="section">
+          <div class="container mx-auto px-4">
+              <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center" style="color: #df30af;">
+                  Como vai funcionar o dia?
+                </h2>
+                                  
+                  <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+                      <!-- Decoração floral -->
+                      <svg class="flower-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                          <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                      </svg>
+                      
+                      <p class="text-lg text-center mb-8 relative z-10">Chegue com o coração aberto e o estômago preparado! 😄</p>
+                      
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 relative z-10">
+                          <div class="card bg-rose-light rounded-lg p-6 text-center">
+                              <span class="text-3xl mb-3 block float">🕐</span>
+                              <h3 class="font-medium mb-2">Horário de chegada</h3>
+                              <p>Chegue as 12H😌</p>
+                          </div>
+                          
+                          <div class="card bg-nude rounded-lg p-6 text-center">
+                              <span class="text-3xl mb-3 block float">🥂</span>
+                              <h3 class="font-medium mb-2">Programação</h3>
+                              <p>Fotos, comes e bebes e uma surpresa especial!</p>
+                          </div>
+                          
+                          <div class="card bg-mint rounded-lg p-6 text-center">
+                              <span class="text-3xl mb-3 block float">💌</span>
+                              <h3 class="font-medium mb-2">Decoração</h3>
+                              <p>Aproveite cada cantinho decorado com carinho!</p>
+                          </div>
+                      </div>
+                      
+                      <div class="text-center relative z-10">
+                        <a href="#confirmar" class="btn inline-block hover:bg-rose-dark text-white font-medium py-3 px-8 rounded-full shadow-md" style="background-color: #df30af;"</a>
+                                                      Confirmar presença
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+        
+        <!-- regras -->
+  <section id="regras">
+    <section id="regras" class="section">
+      <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+              <h2 class="text-3xl md:text-4xl font-bold text-rose-dark mb-8 text-center" style="color: #df30af;">Algumas regrinhas</h2>
+              
+              <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+                  <!-- Decoração floral -->
+                  <svg class="flower-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                      <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                  </svg>
+                  
+                  <p class="text-lg text-center mb-8 relative z-10">Pra que tudo fique lindo e tranquilo, algumas coisinhas importantes:</p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 relative z-10">
+                      <div class="card bg-rose-light rounded-lg p-6">
+                          <div class="flex items-center mb-4">
+                              <span class="text-3xl mr-3">✨</span>
+                              <h3 class="font-medium">Roupa rosa é essencial</h3>
+                          </div>
+                          <p>Venha com a sua melhor roupa rosa, seja camisa, vestido ou o que te fizer sentir mais confortável. O importante é que seja rosa, para darmos aquele toque de união e charme</p>
+                      </div>
+                      
+                      <div class="card bg-nude rounded-lg p-6">
+                          <div class="flex items-center mb-4">
+                              <span class="text-3xl mr-3">🙏</span>
+                              <h3 class="font-medium">Acompanhantes</h3>
+                          </div>
+                          <p>Por uma questão de organização, não é permitido convidar acompanhantes. A lista de convidados está fechada, e queremos garantir que todos se sintam à vontade e aproveitem a ocasião!</p>
+                      </div>
+                      
+                      <div class="card bg-rose-light rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🍹</span>
+                            <h3 class="font-medium">Bebidas</h3>
+                        </div>
+                        <p>O nosso brunch será livre de bebidas alcoólicas e refrigerantes. Queremos focar em um ambiente saudável e leve. Porém, caso queira algo fora do cardápio, há quiosques no parque que vendem bebidas alcoólicas e refrigerantes, caso deseje algo extra</p>
+                    </div>
+                </div>
+
+                      <div class="card bg-rose-light rounded-lg p-6">
+                          <div class="flex items-center mb-4">
+                              <span class="text-3xl mr-3">📅</span>
+                              <h3 class="font-medium">Confirmação</h3>
+                          </div>
+                          <p>Se puder, confirme presença até 15 de junho</p>
+                      </div>
+                  </div>
+                  
+                  <p class="text-lg text-center relative z-10">Conto com seu bom senso e carinho! 💖</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="presentes" class="section">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-rose-dark mb-8 text-center" style="color: #df30af;">Ideias de Presentes</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+              <!-- Decoração floral -->
+              <svg class="flower-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                  <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+              </svg>
+              
+            <p class="text-l text-center mb-8 relative z-10">Se quiser me presentear (não é obrigatório!), aqui vão algumas ideias que amo:</p>
+
+            <div class="grid grid-cols-1 gap-6 mb-6 relative z-10">
+              <div class="card bg-rose-light rounded-lg p-2 relative overflow-hidden">
+                  <img src="../imagens/estilo.jpg" alt="Presente 1" class="w-full h-56 md:h-64 object-cover rounded-md">
+            
+                  <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                      Roupas
+                  </div>
+              </div>
+            
+              <div class="card bg-nude rounded-lg p-2 relative overflow-hidden">
+                  <img src="../imagens/perfumes.jpg" alt="Presente 2" class="w-full h-56 md:h-64 object-cover rounded-md">
+            
+                  <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                      Perfume
+                  </div>
+              </div>
+            
+              <div class="card bg-rose-light rounded-lg p-2 relative overflow-hidden">
+                  <img src="../imagens/joias.jpg" alt="Presente 3" class="w-full h-56 md:h-64 object-cover rounded-md">
+            
+                  <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                     Bijuterias
+                  </div>
+              </div>
+            
+              <div class="card bg-nude rounded-lg p-2 relative overflow-hidden">
+                  <img src="../imagens/doces.jpg" alt="Presente 4" class="w-full h-56 md:h-64 object-cover rounded-md">
+            
+                  <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                      Gloss
+                  </div>
+              </div>
+
+              <div class="card bg-rose-light rounded-lg p-2 relative overflow-hidden">
+                  <img src="../imagens/livros.jpg" alt="Presente 5" class="w-full h-56 md:h-64 object-cover rounded-md">
+            
+                  <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                      Calçados
+                  </div>
+              </div>
+            </div>
+                          
+            <div class="card bg-nude rounded-lg p-2 relative overflow-hidden">
+              <img src="../imagens/singular.jpg" alt="Presente 4" class="w-full h-56 md:h-64 object-cover rounded-md">
+        
+              <div class="absolute top-0 right-0 bg-white text-rose-dark font-bold text-sm px-3 py-1 rounded-tr-lg shadow" style="color: #df30af;">
+                  Produtos p/ <br>
+                  Cabelo cacheado
+              </div>
+          </div>
+
+</section>
+
+<section id="cardapio" class="section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-rose-dark mb-8 text-center" style="color: #df30af;">Cardápio</h2>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+                    <!-- Decoração floral -->
+                    <svg class="flower-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                    </svg>
+                    
+                    <p class="text-lg text-center mb-8 relative z-10">Uma seleção especial pensada com carinho pra você aproveitar:</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 relative z-10">
+                        <div class="card bg-rose-light rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🥪</span>
+                            <p>Pães</p>
+                        </div>
+                        
+                        <div class="card bg-nude rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🍫</span>
+                            <p>Doces</p>
+                        </div>
+                        
+                        <div class="card bg-rose-light rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🥟</span>
+                            <p>Salgados</p>
+                        </div>
+                        
+                        <div class="card bg-nude rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🍓</span>
+                            <p>Frutas</p>
+                        </div>
+                        
+                        <div class="card bg-rose-light rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🍰</span>
+                            <p>Bolos</p>
+                        </div>
+                        
+                        <div class="card bg-nude rounded-lg p-5 text-center">
+                            <span class="text-3xl mb-3 block float">🍹</span>
+                            <p>Sucos naturais</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-center relative z-10">Tem alguma restrição? Me avisa com antecedência!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="confirmar" class="section">
+      <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+              <h2 class="text-3xl md:text-4xl font-bold text-rose-dark mb-8 text-center" style="color: #df30af;">Confirmação de Presença</h2>
+              
+              <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+                  <!-- Decoração floral -->
+                  <svg class="flower-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                      <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                  </svg>
+                  
+                  <p class="text-lg text-center mb-8 relative z-10">Pra deixar tudo organizado, confirme sua presença até <strong>15 de Junho</strong>, por favor!</p>
+                  
+                  <div class="text-center relative z-10">
+                      <a href="https://wa.me/5511944495129?text=Oi%20Nathy!%20Estou%20confirmando%20presença%20no%20brunch%20💕" target="_blank" class="btn inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-8 rounded-full shadow-md">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+                          </svg>
+                          Confirmar pelo WhatsApp
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="agenda" class="section">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-rose-dark mb-8 text-center" style="color: #df30af;">Salve na sua Agenda!</h2>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 relative overflow-hidden">
+                <!-- Decoração floral -->
+                <svg class="flower-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50,10 C55,25 70,35 85,30 C70,35 65,50 70,65 C65,50 50,45 35,50 C50,45 55,30 50,15 C45,30 30,35 15,30 C30,35 35,50 30,65 C35,50 50,45 65,50 C50,45 45,30 50,10 Z"></path>
+                </svg>
+                
+                <p class="text-lg text-center mb-8 relative z-10">Não esqueça esse momento especial!</p>
+                <p class="text-center mb-8 relative z-10">Clique no botão abaixo para adicionar o brunch à sua agenda digital e receber lembretes!</p>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-4 relative z-10">
+                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Brunch+da+Nath&dates=20250619T140000/20250619T160000&details=Brunch+no+Parque+Francisco+Rizzo&location=Parque+Francisco+Rizzo,+Embu+das+Artes&sf=true" 
+                     id="google-calendar" 
+                     class="btn flex items-center justify-center text-white font-medium py-3 px-6 rounded-lg shadow-md hover:opacity-90" 
+                     style="background-color: #df30af;">
+                     
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      📅 Adicionar ao Google Agenda
+                  </a>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+</section>
+
+  <footer>
+    Com carinho, Nathy 💖
+    <p>ㅤ</p>
+    <p class="mb-6">Espero você para celebrar esse momento especial! 💕</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("active");
+    }
+
+    function closeMenu() {
+      document.getElementById("menuLinks").classList.remove("active");
+    }
+  </script>
+
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,             // Duração da animação (ms)
+    easing: 'ease-in-out',     // Tipo de transição
+    once: false,               // Repete ao rolar
+    mirror: true               // Anima ao rolar para cima também
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      function updateCountdown() {
+          // Data e hora do evento: 19 de junho de 2025 às 15:00:00 (formato ISO)
+          const eventDate = new Date('2025-06-19T15:00:00').getTime();
+          const now = new Date().getTime();
+          const timeLeft = eventDate - now;
+
+          if (timeLeft < 0) {
+              document.getElementById('days').innerText = '00';
+              document.getElementById('hours').innerText = '00';
+              document.getElementById('minutes').innerText = '00';
+              document.getElementById('seconds').innerText = '00';
+              return;
+          }
+
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById('days').innerText = days.toString().padStart(2, '0');
+          document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+          document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+          document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const welcomeText = "Seja bem vindo\nBrunch da Nathy🍓";
+    const typingElement = document.querySelector(".typing-text");
+    typingElement.innerHTML = ""; // limpa conteúdo
+    let index = 0;
+
+    function typeLetter() {
+      if (index < welcomeText.length) {
+        if (welcomeText.charAt(index) === "\n") {
+          typingElement.innerHTML += "<br>";
+        } else {
+          typingElement.innerHTML += welcomeText.charAt(index);
+        }
+        index++;
+        setTimeout(typeLetter, 100);
+      } else {
+        setTimeout(() => {
+          document.getElementById("welcome-screen").classList.add("fade-out");
+        }, 1000);
+        setTimeout(() => {
+          document.getElementById("welcome-screen").style.display = "none";
+        }, 2000);
+      }
+    }
+    typeLetter();
+  });
+</script>
+
+</body>
+</html>

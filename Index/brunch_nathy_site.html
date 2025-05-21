@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brunch da Nathy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .typing-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #be123c;
+        }
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            transition: opacity 1s ease-out;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        .menu-flutuante {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 50;
+            background-color: #ff0505;
+            padding: 1rem;
+            border-radius: 0 0 0 1rem;
+            box-shadow: -2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .menu-links {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .menu-links.show {
+            display: flex;
+        }
+        .menu-toggle {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-center">
+
+<div id="welcome-screen">
+    <p class="typing-text"></p>
+</div>
+
+<div class="menu-flutuante">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+        <a href="#inicio" onclick="closeMenu()">Início</a>
+        <a href="#confirmacao" onclick="closeMenu()">Confirmação</a>
+        <a href="#info" onclick="closeMenu()">Informações</a>
+    </div>
+</div>
+
+<section id="inicio" class="py-20">
+    <svg class="w-10 h-10 text-rose-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+                 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 
+                 2.09C13.09 3.81 14.76 3 16.5 3 
+                 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+                 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <h2 class="text-2xl text-rose-600 font-semibold mb-2">Bem-vindos ao</h2>
+    <h1 class="text-4xl font-bold text-rose-600 font-cinzel">Brunch da Nathy</h1>
+</section>
+
+<section class="py-10 bg-white" id="countdown-section">
+    <h2 class="text-2xl font-bold mb-4 text-rose-600">Contagem Regressiva</h2>
+    <div id="countdown" class="flex justify-center gap-4 text-2xl font-semibold text-gray-700">
+        <div><span id="days">00</span><div class="text-sm">dias</div></div>
+        <div><span id="hours">00</span><div class="text-sm">horas</div></div>
+        <div><span id="minutes">00</span><div class="text-sm">min</div></div>
+        <div><span id="seconds">00</span><div class="text-sm">seg</div></div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const welcomeText = "Brunch da Nathy 🍓";
+    const typingElement = document.querySelector(".typing-text");
+    typingElement.textContent = "";
+    let index = 0;
+    function typeLetter() {
+      if (index < welcomeText.length) {
+        typingElement.textContent += welcomeText.charAt(index);
+        index++;
+        setTimeout(typeLetter, 100);
+      } else {
+        setTimeout(() => {
+          document.getElementById("welcome-screen").classList.add("fade-out");
+        }, 1000);
+        setTimeout(() => {
+          document.getElementById("welcome-screen").style.display = "none";
+        }, 2000);
+      }
+    }
+    typeLetter();
+  });
+
+  const targetDate = new Date("2025-06-19T15:00:00");
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "<p>O grande dia chegou! 🎉</p>";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById("days").textContent = String(days).padStart(2, '0');
+    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  function toggleMenu() {
+    document.getElementById('menuLinks').classList.toggle('show');
+  }
+  function closeMenu() {
+    document.getElementById('menuLinks').classList.remove('show');
+  }
+</script>
+
+</body>
+</html>
